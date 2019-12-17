@@ -1,0 +1,209 @@
+
+
+#include "bsp.h"
+#include "fsl_common.h"
+#include "fsl_iomux.h"
+
+
+#define	PWR_IOMUXC_INIT()	IOMUXC_MUX_GPIO1->IO09.U =5; IOMUXC_CFG_GPIO1->IO09.U =0x10B0;
+#define	PWR_GPIO	GPIO1
+#define	PWR_PIN		9
+
+#if 0 //SD1没有使用CD信号.
+#define	SD1_CD_IOMUXC_INIT()	IOMUXC_MUX_GPIO1->IO09.U =5; IOMUXC_CFG_GPIO1->IO09.U =0x10B0;
+#define	SD1_CD_GPIO	GPIO1
+#define	SD1_CD_PIN	19
+#endif
+
+static void PWR_PinInit(void)
+{// GPIO1.9: 0->OFF; 1->ON;
+	gpio_pin_config_t cfg;
+
+	PWR_IOMUXC_INIT();
+
+	cfg.interruptMode =kGPIO_NoIntmode;
+	cfg.outputLogic =0;
+	cfg.direction =kGPIO_DigitalOutput;
+	GPIO_PinInit(PWR_GPIO,PWR_PIN,&cfg);
+
+	GPIO_PinWrite(PWR_GPIO,PWR_PIN,0);   //Power OFF
+	SYS_msleep(200);
+	GPIO_PinWrite(PWR_GPIO,PWR_PIN,1);   //Power ON
+}
+
+#define CARD_BUS_FREQ_50MHZ (0U)
+#define CARD_BUS_FREQ_100MHZ0 (1U)
+#define CARD_BUS_FREQ_100MHZ1 (2U)
+#define CARD_BUS_FREQ_200MHZ (3U)
+
+#define CARD_BUS_STRENGTH_0 (0U)
+#define CARD_BUS_STRENGTH_1 (1U)
+#define CARD_BUS_STRENGTH_2 (2U)
+#define CARD_BUS_STRENGTH_3 (3U)
+#define CARD_BUS_STRENGTH_4 (4U)
+#define CARD_BUS_STRENGTH_5 (5U)
+#define CARD_BUS_STRENGTH_6 (6U)
+#define CARD_BUS_STRENGTH_7 (7U)
+
+void USDHC1_PortInit(void)
+{
+	u32 pin_cfg;
+	u32 clk_pin_cfg;
+
+	PWR_PinInit();
+	pin_cfg =
+			IOMUXC_SW_PAD_CTL_PAD_SPEED(CARD_BUS_FREQ_100MHZ1) | IOMUXC_SW_PAD_CTL_PAD_SRE_MASK |
+            IOMUXC_SW_PAD_CTL_PAD_PKE_MASK | IOMUXC_SW_PAD_CTL_PAD_PUE_MASK |
+            IOMUXC_SW_PAD_CTL_PAD_HYS_MASK | IOMUXC_SW_PAD_CTL_PAD_PUS(1) |
+            IOMUXC_SW_PAD_CTL_PAD_DSE(CARD_BUS_STRENGTH_7);
+
+	clk_pin_cfg =
+			IOMUXC_SW_PAD_CTL_PAD_SPEED(CARD_BUS_FREQ_100MHZ1) | IOMUXC_SW_PAD_CTL_PAD_SRE_MASK | \
+	        IOMUXC_SW_PAD_CTL_PAD_PKE_MASK | IOMUXC_SW_PAD_CTL_PAD_PUE_MASK | \
+	        IOMUXC_SW_PAD_CTL_PAD_HYS_MASK | IOMUXC_SW_PAD_CTL_PAD_PUS(0) |   \
+	        IOMUXC_SW_PAD_CTL_PAD_DSE(CARD_BUS_STRENGTH_7);
+
+#define	USDHC1_PIN_MUX		0
+//#define	USDHC1_PIN_CFG		0x01B0B0u
+#define	USDHC1_PIN_CFG		pin_cfg
+
+	rIOMUXC_MUX(MUX_SD1_CMD).U =USDHC1_PIN_MUX;
+	rIOMUXC_CFG(CFG_SD1_CMD).U =pin_cfg;
+
+	rIOMUXC_MUX(MUX_SD1_CLK).U =USDHC1_PIN_MUX;
+	rIOMUXC_CFG(CFG_SD1_CLK).U =clk_pin_cfg;
+
+	rIOMUXC_MUX(MUX_SD1_DAT0).U =USDHC1_PIN_MUX;
+	rIOMUXC_CFG(CFG_SD1_DAT0).U =pin_cfg;
+
+	rIOMUXC_MUX(MUX_SD1_DAT1).U =USDHC1_PIN_MUX;
+	rIOMUXC_CFG(CFG_SD1_DAT1).U =pin_cfg;
+
+	rIOMUXC_MUX(MUX_SD1_DAT2).U =USDHC1_PIN_MUX;
+	rIOMUXC_CFG(CFG_SD1_DAT2).U =pin_cfg;
+
+	rIOMUXC_MUX(MUX_SD1_DAT3).U =USDHC1_PIN_MUX;
+	rIOMUXC_CFG(CFG_SD1_DAT3).U =pin_cfg;
+
+	////
+
+#ifdef SD1_CD_GPIO
+		{
+			//SD1_nCD
+			IOMUXC_MUX_UART->RTS1.U =5;
+			IOMUXC_CFG_UART->RTS1.U =0x10B0u;
+			SD1_CD_GPIO->GDIR &= ~(1<<SD1_CD_PIN);
+
+		}
+#endif
+
+}
+
+void USDHC2_PortInit(void)
+{
+	u32 pin_cfg;
+	u32 clk_pin_cfg;
+
+	PWR_PinInit();
+
+	pin_cfg =
+			IOMUXC_SW_PAD_CTL_PAD_SPEED(CARD_BUS_FREQ_100MHZ1) | IOMUXC_SW_PAD_CTL_PAD_SRE_MASK | \
+	        IOMUXC_SW_PAD_CTL_PAD_PKE_MASK | IOMUXC_SW_PAD_CTL_PAD_PUE_MASK | \
+	        IOMUXC_SW_PAD_CTL_PAD_HYS_MASK | IOMUXC_SW_PAD_CTL_PAD_PUS(1) |   \
+	        IOMUXC_SW_PAD_CTL_PAD_DSE(CARD_BUS_STRENGTH_7);
+
+	clk_pin_cfg =
+			IOMUXC_SW_PAD_CTL_PAD_SPEED(CARD_BUS_FREQ_100MHZ1) | IOMUXC_SW_PAD_CTL_PAD_SRE_MASK | \
+	        IOMUXC_SW_PAD_CTL_PAD_PKE_MASK | IOMUXC_SW_PAD_CTL_PAD_PUE_MASK | \
+	        IOMUXC_SW_PAD_CTL_PAD_HYS_MASK | IOMUXC_SW_PAD_CTL_PAD_PUS(0) |   \
+	        IOMUXC_SW_PAD_CTL_PAD_DSE(CARD_BUS_STRENGTH_7);
+
+
+
+#define	USDHC2_PIN_MUX		1
+//#define	USDHC1_PIN_CFG		0x01B0B0u
+#define	USDHC2_PIN_CFG		pin_cfg
+
+#if 1
+	//SD2_CLK
+	rIOMUXC_MUX(MUX_NAND_RE).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_RE).U =clk_pin_cfg;
+
+	//SD2_CMD
+	rIOMUXC_MUX(MUX_NAND_WE).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_WE).U =USDHC2_PIN_CFG;
+
+	//SD2_D0
+	rIOMUXC_MUX(MUX_NAND_D0).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_D0).U =USDHC2_PIN_CFG;
+
+	//SD2_D1
+	rIOMUXC_MUX(MUX_NAND_D1).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_D1).U =USDHC2_PIN_CFG;
+
+	//SD2_D2
+	rIOMUXC_MUX(MUX_NAND_D2).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_D2).U =USDHC2_PIN_CFG;
+
+	//SD2_D3
+	rIOMUXC_MUX(MUX_NAND_D3).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_D3).U =USDHC2_PIN_CFG;
+
+	//SD2_D4
+	rIOMUXC_MUX(MUX_NAND_D4).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_D4).U =USDHC2_PIN_CFG;
+
+	//SD2_D5
+	rIOMUXC_MUX(MUX_NAND_D5).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_D5).U =USDHC2_PIN_CFG;
+
+	//SD2_D6
+	rIOMUXC_MUX(MUX_NAND_D6).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_D6).U =USDHC2_PIN_CFG;
+
+	//SD2_D7
+	rIOMUXC_MUX(MUX_NAND_D7).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_D7).U =USDHC2_PIN_CFG;
+
+
+	//SD2_RST
+	rIOMUXC_MUX(MUX_NAND_ALE).U =USDHC2_PIN_MUX;
+	rIOMUXC_CFG(CFG_NAND_ALE).U =USDHC2_PIN_CFG;
+
+	/////
+	gpio_pin_config_t cfg;
+
+	cfg.direction =kGPIO_DigitalOutput;
+	cfg.interruptMode =kGPIO_NoIntmode;
+	cfg.outputLogic =0;
+
+	////RST.
+	rIOMUXC_MUX(MUX_NAND_ALE).U =0x05;
+	rIOMUXC_CFG(CFG_NAND_ALE).U =0x10B0;
+	GPIO_PinInit(GPIO2,10,&cfg);
+
+	GPIO_PinWrite(GPIO2,10,0);
+	SYS_msleep(100);
+	GPIO_PinWrite(GPIO2,10,1);
+	SYS_msleep(500);
+
+#endif
+}
+
+
+/*============================================================================*/
+
+void BOARD_USDHC_SDCARD_POWER_CONTROL_INIT(void)
+{
+	PWR_PinInit();
+}
+
+void BOARD_USDHC_MMCCARD_POWER_CONTROL_INIT(void)
+{
+	PWR_PinInit();
+}
+
+
+/*============================================================================*/
+/*============================================================================*/
+/*============================================================================*/
