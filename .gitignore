@@ -14,7 +14,7 @@ tmp/
 # Compiled Static libraries
 *.lai
 *.la
-*.a
+#*.a
 
 # Python
 *.py[cod]
