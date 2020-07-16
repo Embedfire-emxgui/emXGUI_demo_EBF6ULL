@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         name="GNU Binutils"
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="help/binutils.xml"
+            plugin="mcu.help">
+      </contexts>
+   </extension>
+
+</plugin>

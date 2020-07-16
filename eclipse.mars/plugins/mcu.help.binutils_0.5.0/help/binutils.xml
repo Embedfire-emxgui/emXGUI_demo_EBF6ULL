@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexts>
+   <context id="binutils_as_option_--fatal-warnings" title="Treat warnings as errors">
+      <description>
+If you use the <code>--fatal-warnings</code> option, <code>as</code> considers files that generate warnings to be in error.
+      </description>
+   </context>
+   <context id="binutils_as_option_-I" title="Add &lt;path&gt; to search list for .include directives">
+      <description>
+Use this option to add a &lt;path&gt; to the list of directories <code>as</code> searches for files specified in <code>.include</code> directives (see <b>.include</b>).  You may use <code>-I</code> as many times as necessary to include a variety of paths.  The current working directory is always searched first; after that, <code>as</code> searches any `<code>-I</code>' directories in the same order as they were specified (left to right) on the command line.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/Include.html" label=".include"/>
+   </context>
+   <context id="binutils_as_option_-W" title="Suppress warnings">
+      <description>
+<code>as</code> should never give a warning or error message when assembling compiler output.  But programs written by people often cause <code>as</code> to give a warning that a particular assumption was made.  All such warnings are directed to the standard error file. 
+
+If you use the <code>-W</code> and <code>--no-warn</code> options, no warnings are issued.  This only affects the warning messages: it does not change any particular of how <code>as</code> assembles your file.  Errors, which stop the assembly, are still reported.
+      </description>
+   </context>
+   <context id="binutils_as_avr_option_-mall-opcodes" title="Accept all AVR opcodes, even if not supported by MCU">
+      <description>
+Accept all AVR opcodes, even if not supported by <code>-mmcu</code>.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/AVR-Options.html" label="AVR Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/AVR-Options.html" label="AVR Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/AVR-Options.html" label="AVR Options [Binutils 2.24]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23.1/as/AVR-Options.html" label="AVR Options [Binutils 2.23.1]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23/as/AVR-Options.html" label="AVR Options [Binutils 2.23]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.22/as/AVR-Options.html" label="AVR Options [Binutils 2.22]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.21/as/AVR-Options.html" label="AVR Options [Binutils 2.21]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.20/as/AVR-Options.html" label="AVR Options [Binutils 2.20]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.19/as/AVR-Options.html" label="AVR Options [Binutils 2.19]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.18/as/AVR-Options.html" label="AVR Options [Binutils 2.18]"/>
+   </context>
+   <context id="binutils_as_avr_option_-mmcu=" title="ISA / MCU type">
+      <description>
+Specify ATMEL AVR instruction set or MCU type.
+
+Instruction set <b>avr1</b> is for the minimal AVR core, not supported by the C compiler, only for assembler programs (MCU types: at90s1200, attiny11, attiny12, attiny15, attiny28).
+
+Instruction set <b>avr2</b> (default) is for the classic AVR core with up to 8K program memory space (MCU types: at90s2313, at90s2323, at90s2333, at90s2343, attiny22, attiny26, at90s4414, at90s4433, at90s4434, at90s8515, at90c8534, at90s8535).
+
+Instruction set <b>avr25</b> is for the classic AVR core with up to 8K program memory space plus the MOVW instruction (MCU types: attiny13, attiny13a, attiny2313, attiny2313a, attiny24, attiny24a, attiny4313, attiny44, attiny44a, attiny84, attiny84a, attiny25, attiny45, attiny85, attiny261, attiny261a, attiny461, attiny461a, attiny861, attiny861a, attiny87, attiny43u, attiny48, attiny88, attiny828, at86rf401, ata6289, ata5272).
+
+Instruction set <b>avr3</b> is for the classic AVR core with up to 128K program memory space (MCU types: at43usb355, at76c711).
+
+Instruction set <b>avr31</b> is for the classic AVR core with exactly 128K program memory space (MCU types: atmega103, at43usb320).
+
+Instruction set <b>avr35</b> is for classic AVR core plus MOVW, CALL, and JMP instructions (MCU types: attiny167, attiny1634, at90usb82, at90usb162, atmega8u2, atmega16u2, atmega32u2, ata5505).
+
+Instruction set <b>avr4</b> is for the enhanced AVR core with up to 8K program memory space (MCU types: atmega48, atmega48a, atmega48pa, atmega48p, atmega8, atmega8a, atmega88, atmega88a, atmega88p, atmega88pa, atmega8515, atmega8535, atmega8hva, at90pwm1, at90pwm2, at90pwm2b, at90pwm3, at90pwm3b, at90pwm81, ata6285, ata6286).
+
+Instruction set <b>avr5</b> is for the enhanced AVR core with up to 128K program memory space (MCU types: at90pwm161, atmega16, atmega16a, atmega161, atmega162, atmega163, atmega164a, atmega164p, atmega164pa, atmega165, atmega165a, atmega165p, atmega165pa, atmega168, atmega168a, atmega168p, atmega168pa, atmega169, atmega169a, atmega169p, atmega169pa, atmega32, atmega323, atmega324a, atmega324p, atmega324pa, atmega325, atmega325a, atmega32, atmega32a, atmega323, atmega324a, atmega324p, atmega324pa, atmega325, atmega325a, atmega325p, atmega325p, atmega325pa, atmega3250, atmega3250a, atmega3250p, atmega3250pa, atmega328, atmega328p, atmega329, atmega329a, atmega329p, atmega329pa, atmega3290a, atmega3290p, atmega3290pa, atmega406, atmega64, atmega64a, atmega64rfr2, atmega644rfr2, atmega640, atmega644, atmega644a, atmega644p, atmega644pa, atmega645, atmega645a, atmega645p, atmega6450, atmega6450a, atmega6450p, atmega649, atmega649a, atmega649p, atmega6490, atmega6490a, atmega6490p, atmega16hva, atmega16hva2, atmega16hvb, atmega16hvbrevb, atmega32hvb, atmega32hvbrevb, atmega64hve, at90can32, at90can64, at90pwm161, at90pwm216, at90pwm316, atmega32c1, atmega64c1, atmega16m1, atmega32m1, atmega64m1, atmega16u4, atmega32u4, atmega32u6, at90usb646, at90usb647, at94k, at90scr100, ata5790, ata5795).
+
+Instruction set <b>avr51</b> is for the enhanced AVR core with exactly 128K program memory space (MCU types: atmega128, atmega128a, atmega1280, atmega1281, atmega1284, atmega1284p, atmega128rfa1, atmega128rfr2, atmega1284rfr2, at90can128, at90usb1286, at90usb1287, m3000).
+
+Instruction set <b>avr6</b> is for the enhanced AVR core with a 3-byte PC (MCU types: atmega2560, atmega2561, atmega256rfr2, atmega2564rfr2).
+
+Instruction set <b>avrxmega2</b> is for the XMEGA AVR core with 8K to 64K program memory space and less than 64K data space (MCU types: atxmega16a4, atxmega16a4u, atxmega16c4, atxmega16d4, atxmega16x1, atxmega32a4, atxmega32a4u, atxmega32c4, atxmega32d4, atxmega16e5, atxmega8e5, atxmega32e5, atxmega32x1).
+
+Instruction set <b>avrxmega3</b> is for the XMEGA AVR core with 8K to 64K program memory space and greater than 64K data space (MCU types: none).
+
+Instruction set <b>avrxmega4</b> is for the XMEGA AVR core with up to 64K program memory space and less than 64K data space (MCU types: atxmega64a3, atxmega64a3u, atxmega64a4u, atxmega64b1, atxmega64b3, atxmega64c3, atxmega64d3, atxmega64d4).
+
+Instruction set <b>avrxmega5</b> is for the XMEGA AVR core with up to 64K program memory space and greater than 64K data space (MCU types: atxmega64a1, atxmega64a1u).
+
+Instruction set <b>avrxmega6</b> is for the XMEGA AVR core with larger than 64K program memory space and less than 64K data space (MCU types: atxmega128a3, atxmega128a3u, atxmega128c3, atxmega128d3, atxmega128d4, atxmega192a3, atxmega192a3u, atxmega128b1, atxmega128b3, atxmega192c3, atxmega192d3, atxmega256a3, atxmega256a3u, atxmega256a3b, atxmega256a3bu, atxmega256c3, atxmega256d3, atxmega384c3, atxmega256d3).
+
+Instruction set <b>avrxmega7</b> is for the XMEGA AVR core with larger than 64K program memory space and greater than 64K data space (MCU types: atxmega128a1, atxmega128a1u, atxmega128a4u).
+
+Instruction set <b>avrtiny</b> is for the ATtiny4/5/9/10/20/40 microcontrollers.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/AVR-Options.html" label="AVR Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/AVR-Options.html" label="AVR Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/AVR-Options.html" label="AVR Options [Binutils 2.24]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23.1/as/AVR-Options.html" label="AVR Options [Binutils 2.23.1]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23/as/AVR-Options.html" label="AVR Options [Binutils 2.23]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.22/as/AVR-Options.html" label="AVR Options [Binutils 2.22]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.21/as/AVR-Options.html" label="AVR Options [Binutils 2.21]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.20/as/AVR-Options.html" label="AVR Options [Binutils 2.20]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.19/as/AVR-Options.html" label="AVR Options [Binutils 2.19]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.18/as/AVR-Options.html" label="AVR Options [Binutils 2.18]"/>
+   </context>
+   <context id="binutils_as_avr_option_-mno-skip-bug" title="Disable warnings for skipping two-word instructions">
+      <description>
+This option disable warnings for skipping two-word instructions.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/AVR-Options.html" label="AVR Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/AVR-Options.html" label="AVR Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/AVR-Options.html" label="AVR Options [Binutils 2.24]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23.1/as/AVR-Options.html" label="AVR Options [Binutils 2.23.1]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23/as/AVR-Options.html" label="AVR Options [Binutils 2.23]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.22/as/AVR-Options.html" label="AVR Options [Binutils 2.22]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.21/as/AVR-Options.html" label="AVR Options [Binutils 2.21]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.20/as/AVR-Options.html" label="AVR Options [Binutils 2.20]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.19/as/AVR-Options.html" label="AVR Options [Binutils 2.19]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.18/as/AVR-Options.html" label="AVR Options [Binutils 2.18]"/>
+   </context>
+   <context id="binutils_as_avr_option_-mno-wrap" title="Reject rjmp/rcall instructions with 8K wrap-around">
+      <description>
+This option reject <code>rjmp/rcall</code> instructions with 8K wrap-around.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/AVR-Options.html" label="AVR Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/AVR-Options.html" label="AVR Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/AVR-Options.html" label="AVR Options [Binutils 2.24]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23.1/as/AVR-Options.html" label="AVR Options [Binutils 2.23.1]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23/as/AVR-Options.html" label="AVR Options [Binutils 2.23]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.22/as/AVR-Options.html" label="AVR Options [Binutils 2.22]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.21/as/AVR-Options.html" label="AVR Options [Binutils 2.21]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.20/as/AVR-Options.html" label="AVR Options [Binutils 2.20]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.19/as/AVR-Options.html" label="AVR Options [Binutils 2.19]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.18/as/AVR-Options.html" label="AVR Options [Binutils 2.18]"/>
+   </context>
+   <context id="binutils_as_avr_option_-mrmw" title="Accept Read-Modify-Write instructions">
+      <description>
+Accept Read-Modify-Write (<code>XCH,LAC,LAS,LAT</code>) instructions.      
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/AVR-Options.html" label="AVR Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/AVR-Options.html" label="AVR Options [Binutils 2.25]"/>
+   </context>
+   <context id="binutils_as_msp430_option_-mcpu=" title="CPU architecture">
+      <description>
+Selects the cpu architecture.  If the architecture is 430Xv2 then this also enables NOP generation unless the <code>-mN</code> is also specified.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/MSP430-Options.html" label="MSP430 Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.24]"/>
+   </context>
+   <context id="binutils_as_msp430_option_-md" title="Force copying of data from ROM to RAM at startup">
+      <description>
+Mark the object file as one that requires data to copied from ROM to RAM at execution startup.  Disabled by default.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/MSP430-Options.html" label="MSP430 Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.24]"/>
+   </context>
+   <context id="binutils_as_msp430_option_-ml" title="Enable large code model">
+      <description>
+Indicates that the input uses the large code model.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/MSP430-Options.html" label="MSP430 Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.24]"/>
+   </context>
+   <context id="binutils_as_msp430_option_-mN" title="Disable generation of NOP after changing interrupts">
+      <description>
+Disables the generation of a NOP instruction following any instruction that might change the interrupts enabled/disabled state.  For the 430Xv2 architecture the instructions: <code>EINT</code>, <code>DINT</code>, <code>BIC #8, SR</code>, <code>BIS #8, SR</code> and <code>MOV.W</code> &lt;&gt;<code>, SR</code> must be followed by a NOP instruction in order to ensure the correct processing of interrupts.  By default generation of the NOP instruction happens automatically, but this command line option disables this behaviour.  It is then up to the programmer to ensure that interrupts are enabled and disabled correctly.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/MSP430-Options.html" label="MSP430 Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.24]"/>
+   </context>
+   <context id="binutils_as_msp430_option_-mn|-mN" title="Insert a NOP after changing interrupts">
+      <description>
+Enables the generation of a NOP instruction following any instruction that might change the interrupts enabled/disabled state.  The pipelined nature of the MSP430 core means that any instruction that changes the interrupt state (<code>EINT</code>, <code>DINT</code>, <code>BIC #8, SR</code>, <code>BIS #8, SR</code> or <code>MOV.W</code> &lt;&gt;<code>, SR</code>) must be followed by a NOP instruction in order to ensure the correct processing of interrupts.  By default it is up to the programmer to supply these NOP instructions, but this command line option enables the automatic insertion by the assembler, if they are missing.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/MSP430-Options.html" label="MSP430 Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.25]"/>
+   </context>
+   <context id="binutils_as_msp430_option_-mP" title="Enable polymorph instructions">
+      <description>
+Enables polymorph instructions handler.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/MSP430-Options.html" label="MSP430 Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.24]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23.1/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.23.1]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.23]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.22/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.22]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.21/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.21]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.20/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.20]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.19/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.19]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.18/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.18]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.17/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.17]"/>
+   </context>
+   <context id="binutils_as_msp430_option_-mQ" title="Enable relaxation at assembly time">
+      <description>
+Enables relaxation at assembly time.  DANGEROUS!
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/MSP430-Options.html" label="MSP430 Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.24]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23.1/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.23.1]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.23]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.22/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.22]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.21/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.21]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.20/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.20]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.19/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.19]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.18/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.18]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.17/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.17]"/>
+   </context>
+   <context id="binutils_as_msp430_option_-my|-mY" title="Warn about missing NOPs after changing interrupts">
+      <description>
+Tells the assembler to generate a warning message if a NOP does not immediately follow an instruction that enables or disables interrupts.  This is the default.
+
+Note that this option can be stacked with the <code>-mn</code> option so that the assembler will both warn about missing NOP instructions and then insert them automatically.
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/as/MSP430-Options.html" label="MSP430 Options"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/as/MSP430-Options.html" label="MSP430 Options [Binutils 2.25]"/>
+   </context>
+   <context id="binutils_ld_option_-(" title="Group all libraries">
+      <description>
+The archives should be a list of archive files.  They may be either explicit file names, or `<code>-l</code>' options. 
+
+The specified archives are searched repeatedly until no new undefined references are created.  Normally, an archive is searched only once in the order that it is specified on the command line.  If a symbol in that archive is needed to resolve an undefined symbol referred to by an object in an archive that appears later on the command line, the linker would not be able to resolve that reference.  By grouping the archives, they all be searched repeatedly until all possible references are resolved.
+
+Using this option has a significant performance cost.  It is best to use it only when there are unavoidable circular references between two or more archives.
+      </description>
+   </context>
+   <context id="binutils_ld_option_-Bsymbolic" title="Bind global references locally">
+      <description>
+When creating a shared library, bind references to global symbols to the definition within the shared library, if any.  Normally, it is possible for a program linked against a shared library to override the definition within the shared library.  This option is only meaningful on ELF platforms which support shared libraries.
+      </description>
+   </context>
+   <context id="binutils_ld_option_--[no-]fatal-warnings" title="Treat warnings as errors">
+      <description>
+Treat all warnings as errors.  The default behaviour can be restored with the option <code>--no-fatal-warnings</code>.
+      </description>
+   </context>
+   <context id="binutils_ld_option_--no-undefined" title="Do not allow unresolved references in object files">
+      <description>
+Report unresolved symbol references from regular object files.  This is done even if the linker is creating a non-symbolic shared library.  The switch <code>--[no-]allow-shlib-undefined</code> controls the behaviour for reporting unresolved references found in shared libraries being linked in.
+      </description>
+   </context>
+   <context id="binutils_ld_option_-shared" title="Create a shared library">
+      <description>
+Create a shared library.  This is currently only supported on ELF, XCOFF and SunOS platforms.  On SunOS, the linker will automatically create a shared library if the <code>-e</code> option is not used and there are undefined symbols in the link.
+      </description>
+   </context>
+   <context id="binutils_ld_option_--verbose=" title="Output lots of information during link">
+      <description>
+Display the version number for <code>ld</code> and list the linker emulations supported.  Display which input files can and cannot be opened.  Display the linker script being used by the linker.  If the optional &lt;number&gt; argument > 1, plugin symbol status will also be displayed.
+      </description>
+   </context>
+   <context id="binutils_ld_option_--warn-common" title="Warn about duplicate common symbols">
+      <description>
+Warn when a common symbol is combined with another common symbol or with a symbol definition.  Unix linkers allow this somewhat sloppy practice, but linkers on some other operating systems do not.  This option allows you to find potential problems from combining global symbols.  Unfortunately, some C libraries use this practice, so you may get some warnings about symbols in the libraries as well as in your programs. 
+
+There are three kinds of global symbols, illustrated here by C examples:
+	 
+`<code>int i = 1;</code>'
+        A definition, which goes in the initialized data section of the output file. 
+`<code>extern int i;</code>'
+        An undefined reference, which does not allocate space. There must be either a definition or a common symbol for the variable somewhere. 
+`<code>int i;</code>'
+        A common symbol. If there are only (one or more) common symbols for a variable, it goes in the uninitialized data area of the output file. The linker merges multiple common symbols for the same variable into a single symbol. If they are of different sizes, it picks the largest size. The linker turns a common symbol into a declaration, if there is a definition of the same variable. 
+
+The `<code>--warn-common</code>' option can produce five kinds of warnings.  Each warning consists of a pair of lines: the first describes the symbol just encountered, and the second describes the previous symbol encountered with the same name.  One or both of the two symbols will be a common symbol.
+ 
+1. Turning a common symbol into a reference, because there is already a definition for the symbol. 
+        <code>file(section): warning: common of `symbol'</code>
+            <code>overridden by definition</code>
+        <code>file(section): warning: defined here</code>
+          
+2. Turning a common symbol into a reference, because a later definition for the symbol is encountered.  This is the same as the previous case, except that the symbols are encountered in a different order. 
+        <code>file(section): warning: definition of `symbol'</code>
+            <code>overriding common</code>
+        <code>file(section): warning: common is here</code>
+          
+3. Merging a common symbol with a previous same-sized common symbol. 
+        <code>file(section): warning: multiple common</code>
+            <code>of `symbol'</code>
+        <code>file(section): warning: previous common is here</code>
+          
+4. Merging a common symbol with a previous larger common symbol. 
+        <code>file(section): warning: common of `symbol'</code>
+            <code>overridden by larger common</code>
+        <code>file(section): warning: larger common is here</code>
+          
+5. Merging a common symbol with a previous smaller common symbol.  This is the same as the previous case, except that the symbols are encountered in a different order. 
+        <code>file(section): warning: common of `symbol'</code>
+            <code>overriding smaller common</code>
+        <code>file(section): warning: smaller common is here</code>
+      </description>
+   </context>
+   <context id="binutils_ld_option_-z[no]combreloc" title="Multiple reloc sections combining">
+      <description>
+Combines multiple reloc sections and sorts them to make dynamic symbol lookup caching possible.      
+      </description>
+   </context>
+   <context id="binutils_ld_msp430_option_-m" title="MPU architecture">
+      <description>
+For the MSP430 it is possible to select the MPU architecture.  The flag `<code>-m [mpu type]</code>' will select an appropriate linker script for selected MPU type.  (To get a list of known MPUs just pass `<code>-m help</code>' option to the linker).
+      </description>
+      <topic href="https://sourceware.org/binutils/docs/ld/MSP430.html" label="ld and MSP430"/>
+      <topic href="https://sourceware.org/binutils/docs-2.25/ld/MSP430.html" label="ld and MSP430 [Binutils 2.25]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.24/ld/MSP430.html" label="ld and MSP430 [Binutils 2.24]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23.1/ld/MSP430.html" label="ld and MSP430 [Binutils 2.23.1]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.23/ld/MSP430.html" label="ld and MSP430 [Binutils 2.23]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.22/ld/MSP430.html" label="ld and MSP430 [Binutils 2.22]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.21/ld/MSP430.html" label="ld and MSP430 [Binutils 2.21]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.20/ld/MSP430.html" label="ld and MSP430 [Binutils 2.20]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.19/ld/MSP430.html" label="ld and MSP430 [Binutils 2.19]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.18/ld/MSP430.html" label="ld and MSP430 [Binutils 2.18]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.17/ld/MSP430.html" label="ld and MSP430 [Binutils 2.17]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.16/ld/MSP430.html" label="ld and MSP430 [Binutils 2.16]"/>
+      <topic href="https://sourceware.org/binutils/docs-2.15/ld/MSP430.html" label="ld and MSP430 [Binutils 2.15]"/>
+   </context>
+   <context id="binutils_objcopy_option_--add-section" title="Add section &lt;sectionname&gt; found in &lt;filename&gt; to output">
+      <description>
+Add a new section named &lt;sectionname&gt; while copying the file.  The contents of the new section are taken from the file &lt;filename&gt;.  The size of the section will be the size of the file.  This option only works on file formats which can support sections with arbitrary names.  Note - it may be necessary to use the <code>--set-section-flags</code> option to set the attributes of the newly created section.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_--change-addresses" title="Add &lt;incr&gt; to LMA, VMA and start addresses">
+      <description>
+Change the VMA and LMA addresses of all sections, as well as the start address, by adding &lt;incr&gt;.  Some object file formats do not permit section addresses to be changed arbitrarily.  Note that this does not relocate the sections; if the program expects sections to be loaded at a certain address, and this option is used to change the sections such that they are loaded at a different address, the program may fail.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_--change-section-address" title="Set or change LMA and VMA of sections">
+      <description>
+Set or change both the VMA address and the LMA address of any section matching &lt;sectionpattern&gt;.  If `<code>=</code>' is used, the section address is set to &lt;val&gt;.  Otherwise, &lt;val&gt; is added to or subtracted from the section address.  See the comments under <code>--change-addresses</code>.  If &lt;sectionpattern&gt; does not match any sections in the input file, a warning will be issued, unless <code>--no-change-warnings</code> is used.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_--change-section-lma" title="Set or change the LMA of sections">
+      <description>
+Set or change the LMA address of any sections matching &lt;sectionpattern&gt;.  The LMA address is the address where the section will be loaded into memory at program load time.  Normally this is the same as the VMA address, which is the address of the section at program run time, but on some systems, especially those where a program is held in ROM, the two can be different. If `<code>=</code>' is used, the section address is set to &lt;val&gt;.  Otherwise, &lt;val&gt; is added to or subtracted from the section address.  See the comments under <code>--change-addresses</code>.  If &lt;sectionpattern&gt; does not match any sections in the input file, a warning will be issued, unless <code>--no-change-warnings</code> is used.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_--change-section-vma" title="Set or change the VMA of sections">
+      <description>
+Set or change the VMA address of any section matching &lt;sectionpattern&gt;.  The VMA address is the address where the section will be located once the program has started executing.  Normally this is the same as the LMA address, which is the address where the section will be loaded into memory, but on some systems, especially those where a program is held in ROM, the two can be different. If `<code>=</code>' is used, the section address is set to &lt;val&gt;.  Otherwise, &lt;val&gt; is added to or subtracted from the section address.  See the comments under <code>--change-addresses</code>.  If &lt;sectionpattern&gt; does not match any sections in the input file, a warning will be issued, unless <code>--no-change-warnings</code> is used.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_--change-start" title="Add &lt;incr&gt; to the start address">
+      <description>
+Change the start address by adding &lt;incr&gt;.  Not all object file formats support setting the start address.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_--gap-fill" title="Fill gaps between sections with &lt;val&gt;">
+      <description>
+Fill gaps between sections with &lt;val&gt;.  This operation applies to the load address (LMA) of the sections.  It is done by increasing the size of the section with the lower address, and filling in the extra space created with &lt;val&gt;.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_-j" title="Only copy section &lt;sectionpattern&gt; into the output">
+      <description>
+Copy only the indicated sections from the input file to the output file.  This option may be given more than once.  Note that using this option inappropriately may make the output file unusable.  Wildcard characters are accepted in &lt;sectionpattern&gt;.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_-p" title="Copy modified/access timestamps to the output">
+      <description>
+Set the access and modification dates of the output file to be the same as those of the input file.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_--pad-to" title="Pad the last section up to &lt;address&gt;">
+      <description>
+Pad the output file up to the load address &lt;address&gt;.  This is done by increasing the size of the last section.  The extra space is filled in with the value specified by <code>--gap-fill</code> (default zero).
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_-R" title="Remove section &lt;sectionpattern&gt; from the output">
+      <description>
+Remove any section matching &lt;sectionpattern&gt; from the output file.  This option may be given more than once.  Note that using this option inappropriately may make the output file unusable.  Wildcard characters are accepted in &lt;sectionpattern&gt;.  Using both the <code>-j</code> and <code>-R</code> options together results in undefined behaviour.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_--set-start" title="Set the start address to &lt;val&gt;">
+      <description>
+Set the start address of the new file to &lt;val&gt;.  Not all object file formats support setting the start address.
+      </description>
+   </context>
+   <context id="binutils_objcopy_option_-v" title="List all object files modified">
+      <description>
+Verbose output: list all object files modified.  In the case of archives, `<code>objcopy -V</code>' lists all members of the archive.
+      </description>
+   </context>
+   <context id="binutils_objcopy_pe_option_--subsystem" title="Set PE subsystem to &lt;which&gt;">
+      <description>
+Specifies the subsystem under which your program will execute.  The legal values for &lt;which&gt; are <code>native</code>, <code>windows</code>, <code>console</code>, <code>posix</code>, <code>efi-app</code>, <code>efi-bsd</code>, <code>efi-rtd</code>, <code>sal-rtd</code>, and <code>xbox</code>.  You may optionally set the subsystem version also.  Numeric values are also accepted for &lt;which&gt;.  [This option is specific to PE targets.]
+      </description>
+   </context>
+   <context id="binutils_objdump_option_-j" title="Only display information for section &lt;name&gt;">
+      <description>
+Display information only for section &lt;name&gt;.
+      </description>
+   </context>
+   <context id="binutils_objdump_option_-s" title="Display the full contents of all sections requested">
+      <description>
+Display the full contents of any sections requested.  By default all non-empty sections are displayed.
+      </description>
+   </context>
+   <context id="binutils_objdump_option_-S" title="Intermix source code with disassembly">
+      <description>
+Display source code intermixed with disassembly, if possible.  Implies <code>-d</code>.
+      </description>
+   </context>
+   <context id="binutils_size_option_--common" title="Display total size for *COM* syms">
+      <description>
+Print total size of common symbols in each file.  When using Berkeley format these are included in the bss size.
+      </description>
+   </context>
+   <context id="binutils_size_option_--format=" title="Output style">
+      <description>
+Using one of these options, you can choose whether the output from GNU <code>size</code> resembles output from System V <code>size</code> (using <code>-A</code>, or <code>--format=sysv</code>), or Berkeley <code>size</code> (using <code>-B</code>, or <code>--format=berkeley</code>).  The default is the one-line format similar to Berkeley's.
+
+Here is an example of the Berkeley (default) format of output from <code>size</code>:
+
+    <code>$ size --format=Berkeley ranlib size</code>
+    <code>text    data    bss     dec     hex     filename</code>
+    <code>294880  81920   11592   388392  5ed28   ranlib</code>
+    <code>294880  81920   11888   388688  5ee50   size</code>
+
+This is the same data, but displayed closer to System V conventions:
+
+    <code>$ size --format=SysV ranlib size</code>
+    <code>ranlib  :</code>
+    <code>section         size         addr</code>
+    <code>.text         294880         8192</code>
+    <code>.data          81920       303104</code>
+    <code>.bss           11592       385024</code>
+    <code>Total         388392</code>
+          
+          
+    <code>size  :</code>
+    <code>section         size         addr</code>
+    <code>.text         294880         8192</code>
+    <code>.data          81920       303104</code>
+    <code>.bss           11888       385024</code>
+    <code>Total         388688</code>
+      </description>
+   </context>
+   <context id="binutils_size_option_--format=(avr)" title="Output style">
+      <description>
+Using one of these options, you can choose whether the output from GNU <code>size</code> resembles output from System V <code>size</code> (using <code>-A</code>, or <code>--format=sysv</code>), Berkeley <code>size</code> (using <code>-B</code>, or <code>--format=berkeley</code>), or <code>avr-size</code> (using <code>--format=avr</code>).  The default is the one-line format similar to Berkeley's.
+
+Here is an example of the Berkeley (default) format of output from <code>size</code>:
+
+    <code>text     data     bss     dec     hex filename</code>
+        <code>72        2       0      74      4a test.elf</code>
+
+This is the same data, but displayed closer to System V conventions:
+
+    <code>test.elf  :</code>
+    <code>section   size      addr</code>
+    <code>.text     72         0</code>
+    <code>.fuse      2   8519680</code>
+    <code>Total     74</code>
+
+Again, this is the same data, but displayed compatible to <code>avr-size</code> (using the hardware option <code>--mcu=attiny13a</code>, which is needed for the calculation of the memory usage in percent):
+          
+    <code>AVR Memory Usage</code>
+    <code>----------------</code>
+    <code>Device: attiny13a</code>
+
+    <code>Program:      72 bytes (7.0% Full)</code>
+    <code>(.text + .data + .bootloader)</code>
+
+    <code>Data:          0 bytes (0.0% Full)</code>
+    <code>(.data + .bss + .noinit)</code>
+      </description>
+   </context>
+   <context id="binutils_size_option_--mcu=" title="MCU name">
+      <description>
+Specify Atmel AVR MCU type.  This option is used for the calculation of the memory usage in percent.
+      </description>
+   </context>
+   <context id="binutils_size_option_--radix=" title="Radix">
+      <description>
+Using one of these options, you can control whether the size of each section is given in decimal (<code>-d</code>, or <code>--radix=10</code>); octal (<code>-o</code>, or <code>--radix=8</code>); or hexadecimal (<code>-x</code>, or <code>--radix=16</code>).  In <code>--radix=</code>&lt;number&gt;, only the three values (8, 10, 16) are supported.  The total size is always given in two radices; decimal and hexadecimal for <code>-d</code> or <code>-x</code> output, or octal and hexadecimal if you're using <code>-o</code>.
+      </description>
+   </context>
+   <context id="binutils_size_option_--totals" title="Display the total sizes">
+      <description>
+Show totals of all objects listed (Berkeley format listing mode only).
+      </description>
+   </context>
+</contexts>

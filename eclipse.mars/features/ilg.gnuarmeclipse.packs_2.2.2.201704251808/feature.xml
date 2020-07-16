@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+	id="ilg.gnuarmeclipse.packs"
+	label="%featureName"
+	version="2.2.2.201704251808"
+	provider-name="%providerName"
+	plugin="ilg.gnuarmeclipse.packs">
+
+	<description>
+		%description
+	</description>
+
+	<copyright>
+		%copyright
+	</copyright>
+
+	<license url="%licenseURL">
+		%license
+	</license>
+
+	<plugin
+		id="ilg.gnuarmeclipse.packs"
+		download-size="28"
+		install-size="41"
+		version="1.2.4.201704251808"
+		unpack="false" />
+
+	<plugin
+		id="ilg.gnuarmeclipse.packs.core"
+		download-size="31"
+		install-size="54"
+		version="1.1.3.201704251808"
+		unpack="false" />
+
+	<plugin
+		id="ilg.gnuarmeclipse.packs.data"
+		download-size="85"
+		install-size="166"
+		version="1.3.1.201704251808"
+		unpack="false" />
+
+	<plugin
+		id="ilg.gnuarmeclipse.packs.ui"
+		download-size="172"
+		install-size="264"
+		version="1.2.4.201704251808"
+		unpack="false" />
+
+	<plugin
+		id="ilg.gnuarmeclipse.managedbuild.packs"
+		download-size="40"
+		install-size="72"
+		version="1.3.1.201704251808"
+		unpack="false" />
+
+	<plugin
+		id="ilg.gnuarmeclipse.debug.packs"
+		download-size="5"
+		install-size="5"
+		version="1.1.1.201704251808"
+		unpack="false" />
+
+	<plugin
+		id="ilg.gnuarmeclipse.core"
+		download-size="87"
+		install-size="157"
+		version="3.4.1.201704251808"
+		unpack="false" />
+
+</feature>

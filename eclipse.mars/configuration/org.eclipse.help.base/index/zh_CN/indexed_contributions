@@ -1,0 +1,35 @@
+#This is a generated file; do not edit.
+#Sat Dec 14 13:31:17 CST 2019
+org.eclipse.linuxtools.rpm.ui.editor.doc=org.eclipse.linuxtools.rpm.ui.editor.doc\n1.0.0.201506101754
+org.eclipse.linuxtools.cdt.libhover.glibc=org.eclipse.linuxtools.cdt.libhover.glibc\n1.2.0.201506101754
+org.eclipse.help.base=org.eclipse.help.base\n4.0.301.v20160212-1500
+org.eclipse.mylyn.help.ui=org.eclipse.mylyn.help.ui\n3.16.0.v20150525-2001
+org.eclipse.cdt.debug.application.doc=org.eclipse.cdt.debug.application.doc\n1.0.0.201506070905
+org.eclipse.epp.mpc.ui=org.eclipse.epp.mpc.ui\n1.4.0.v20150618-1659
+org.eclipse.linuxtools.changelog.doc=org.eclipse.linuxtools.changelog.doc\n2.7.1.201506101754
+org.eclipse.rse.doc.user=org.eclipse.rse.doc.user\n3.4.100.201403101646
+ilg.gnuarmeclipse.doc.user=ilg.gnuarmeclipse.doc.user\n1.1.1.201704251808
+org.eclipse.linuxtools.valgrind.doc=org.eclipse.linuxtools.valgrind.doc\n1.0.0.201506101754
+org.eclipse.egit.doc=org.eclipse.egit.doc\n4.0.0.201506090130-r
+org.eclipse.linuxtools.cdt.libhover.library.docs=org.eclipse.linuxtools.cdt.libhover.library.docs\n1.0.2.201506101754
+org.eclipse.linuxtools.gcov.docs=org.eclipse.linuxtools.gcov.docs\n1.0.0.201506101754
+org.eclipse.oomph.setup.doc=org.eclipse.oomph.setup.doc\n1.1.0.v20150609-1048
+org.eclipse.cdt=org.eclipse.cdt\n8.7.0.201506070905
+org.eclipse.tracecompass.doc.dev=org.eclipse.tracecompass.doc.dev\n1.0.0.201506101850
+org.eclipse.ui.cheatsheets=org.eclipse.ui.cheatsheets\n3.4.200.v20131227-1524
+org.eclipse.cdt.launch.remote=org.eclipse.cdt.launch.remote\n2.4.0.201506070905
+org.eclipse.linuxtools.cdt.libhover.devhelp=org.eclipse.linuxtools.cdt.libhover.devhelp\n1.1.0.201506101754
+org.eclipse.linuxtools.gprof.docs=org.eclipse.linuxtools.gprof.docs\n1.0.0.201506101754
+org.eclipse.linuxtools.profiling.docs=org.eclipse.linuxtools.profiling.docs\n1.0.0.201506101754
+org.eclipse.ui.intro=org.eclipse.ui.intro\n3.4.300.v20141007-1449
+org.eclipse.help=org.eclipse.help\n3.6.0.v20130326-1254
+org.eclipse.mylyn.wikitext.help.ui=org.eclipse.mylyn.wikitext.help.ui\n2.5.0.v20150420-1908
+org.eclipse.cdt.doc.user=org.eclipse.cdt.doc.user\n5.4.0.201506070905
+org.eclipse.tracecompass.gdbtrace.doc.user=org.eclipse.tracecompass.gdbtrace.doc.user\n1.0.0.201506101850
+org.eclipse.epp.mpc.help.ui=org.eclipse.epp.mpc.help.ui\n1.4.0.v20150603-1603
+org.eclipse.tracecompass.doc.user=org.eclipse.tracecompass.doc.user\n1.0.0.201506101850
+org.eclipse.platform=org.eclipse.platform\n4.5.2.v20160212-1500
+org.eclipse.oomph.p2.doc=org.eclipse.oomph.p2.doc\n1.1.0.v20150609-0914
+org.eclipse.cdt.autotools.docs=org.eclipse.cdt.autotools.docs\n2.0.2.201506070905
+org.eclipse.platform.doc.user=org.eclipse.platform.doc.user\n4.5.1.v20150819-1130
+org.eclipse.ui.intro.universal=org.eclipse.ui.intro.universal\n3.2.800.v20150325-0952

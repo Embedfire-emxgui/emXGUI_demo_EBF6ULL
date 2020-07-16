@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+	id="ilg.gnuarmeclipse.codered"
+	label="%featureName"
+	version="1.1.1.201704251808"
+	provider-name="%providerName"
+	plugin="ilg.gnuarmeclipse.codered">
+
+	<description>
+		%description
+	</description>
+
+	<copyright>
+		%copyright
+	</copyright>
+
+	<license url="%licenseURL">
+		%license
+	</license>
+
+	<plugin
+		id="ilg.gnuarmeclipse.codered"
+		download-size="10"
+		install-size="16"
+		version="1.1.1.201704251808"
+		unpack="false" />
+
+	<plugin
+		id="ilg.gnuarmeclipse.core"
+		download-size="87"
+		install-size="157"
+		version="3.4.1.201704251808"
+		unpack="false" />
+
+</feature>
